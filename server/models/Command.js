@@ -4,7 +4,7 @@ const CommandSchema = {
     title: {type: String, required: true},
     code: {type: String, required: true},
     id: String,
-    category: {type: mongoose.Schema.Types.ObjectId, ref: 'Command'},
+    category: {type: mongoose.Schema.Types.ObjectId, ref: 'Category'},
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 }
 
