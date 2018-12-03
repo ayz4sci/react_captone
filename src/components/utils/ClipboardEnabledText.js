@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Tooltip} from 'react-tippy';
+import 'react-tippy/dist/tippy.css';
 
 class ClipboardEnabledText extends React.Component{
     state = {
