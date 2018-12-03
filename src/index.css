@@ -8,7 +8,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.appRoot {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.cheat{
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

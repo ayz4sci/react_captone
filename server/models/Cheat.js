@@ -1,15 +1,15 @@
 import mongoose from 'mongoose';
 
-const CommandSchema = {
+const CheatSchema = {
     title: {type: String, required: true},
     code: {type: String, required: true},
     id: String,
     category: {type: mongoose.Schema.Types.ObjectId, ref: 'Category'},
-    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    author: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 }
 
-const Command = mongoose.model(
-    'Command', CommandSchema, "commands"
+const Cheat = mongoose.model(
+    'Cheat', CheatSchema, "cheats"
     );
 
-module.exports = Command;
+module.exports = Cheat;

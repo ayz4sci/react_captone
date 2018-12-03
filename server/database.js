@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import GroceryItem from './models/GroceryItem';
+import Cheat from './models/Cheat';
 
 mongoose.connect('mongodb://localhost/grocery', () => {
     console.log('connected.');
@@ -14,7 +14,9 @@ mongoose.connect('mongodb://localhost/grocery', () => {
     ];
 
     items.forEach( item => {
-        new GroceryItem(item).save();
+        new Cheat(item).save();
     })
 });
+
+
 

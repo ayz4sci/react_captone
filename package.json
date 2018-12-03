@@ -17,6 +17,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
+    "react-tippy": "^1.2.3",
     "toastr": "2.1.4"
   },
   "scripts": {
