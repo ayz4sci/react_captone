@@ -20,8 +20,7 @@
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
     "react-tippy": "^1.2.3",
-    "toastr": "2.1.4",
-    "webpack": "^4.26.1"
+    "toastr": "2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

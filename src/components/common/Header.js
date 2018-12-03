@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-import {orange500, blue900} from 'material-ui/styles/colors';
+import {blueGrey900} from 'material-ui/styles/colors';
 
 class Header extends React.Component{
     render(){
@@ -10,12 +10,13 @@ class Header extends React.Component{
                 {/* <h2 className="col">Git Cheat Sheet</h2> */}
 
                 <TextField
-                    className="col-4"
+                    className="col-3"
                     floatingLabelText="Git Cheat Sheet"
                     name="search"
                     floatingLabelStyle={styles.floatingLabelStyle}
                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     underlineStyle={styles.underlineStyle}
+                    underlineShow="true"
                     />
             </div>
         )
@@ -24,13 +25,16 @@ class Header extends React.Component{
 
 const styles = {
     underlineStyle: {
-      borderColor: blue900,
+      borderColor: blueGrey900,
+      
     },
     floatingLabelStyle: {
-      color: blue900,
+      color: blueGrey900,
+      fontSize: '26px',
+
     },
     floatingLabelFocusStyle: {
-      color: blue900,
+      color: blueGrey900,
     },
 };
 export default Header;
