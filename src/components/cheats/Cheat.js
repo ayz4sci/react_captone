@@ -5,7 +5,7 @@ import ClipboardEnabledText from '../utils/ClipboardEnabledText';
 class Cheat extends React.Component{
     render(){
         return (
-            <div className="cheat">
+            <div className="cheat m-2">
                 <div>{this.props.cheat.description}</div>
                 <ClipboardEnabledText content={this.props.cheat.command} />
             </div>

@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import Cheat from './Cheat';
 
 class CheatList extends React.Component{
-
     render(){
-        console.log(this.props.cheats);
         return (
             <div>
                 { this.props.cheats.map( (cheat, key) => 
