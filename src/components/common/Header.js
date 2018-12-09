@@ -1,40 +1,28 @@
 import React from 'react';
-import TextField from 'material-ui/TextField';
-import {blueGrey900} from 'material-ui/styles/colors';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Search from '@material-ui/icons/Search';
 
 class Header extends React.Component{
     render(){
         return (
             <div className="row mt-4 mb-4 mr-1 justify-content-md-center">
-                {/* <h2 className="row justify-content-md-center">Git Sheetsheet</h2> */}
-                {/* <h2 className="col">Git Cheat Sheet</h2> */}
-
                 <TextField
-                    className="col-3"
-                    floatingLabelText="Git Cheat Sheet"
-                    name="search"
-                    floatingLabelStyle={styles.floatingLabelStyle}
-                    floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                    underlineStyle={styles.underlineStyle}
-                    underlineShow="true"
+                    className="col-3 header"
+                    id="search"
+                    label="Git Cheat Sheet"
+                    variant="outlined"
+                    InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <Search />
+                          </InputAdornment>
+                        ),
+                      }}
                     />
             </div>
         )
     }
 }
 
-const styles = {
-    underlineStyle: {
-      borderColor: blueGrey900,
-      
-    },
-    floatingLabelStyle: {
-      color: blueGrey900,
-      fontSize: '26px',
-
-    },
-    floatingLabelFocusStyle: {
-      color: blueGrey900,
-    },
-};
 export default Header;

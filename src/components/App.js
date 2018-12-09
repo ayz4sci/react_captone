@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import CategoryCard from './category/CategoryCard';
 import Header from './common/Header';
+import Sidemenu from './common/Sidemenu';
 import './App.css';
 
 class App extends Component {
-  render() {
-    let json = require('../components/utils/git-cheat-sheet.json');
+  state = {
+    sideBarOpen: false
+  }
 
+  json = require('../components/utils/git-cheat-sheet.json');
+
+
+  render() {
     return (
-      <MuiThemeProvider>
-        <div className="container">
+      <div id="outer-container">
+        <Sidemenu />
+        <div className="container" id="page-wrap">
           <Header />
           <div className="card-columns">
-            { json.map( (item, key) => 
+            { this.json.map( (item, key) => 
               <CategoryCard category={item}  key={key}/>
             )}
           </div>
         </div>
-      </MuiThemeProvider>
+      </div>
+
     );
   }
 }

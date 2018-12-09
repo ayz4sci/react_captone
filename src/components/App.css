@@ -3,3 +3,8 @@
     max-width: 1300px!important;
   }
 }
+
+body, ul {
+  margin: 0;
+  padding: 0;
+}
