@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CheatList from '../cheats/CheatList';
+import Cheat from '../cheat/Cheat';
 import './CategoryCard.css'
 
 class CategoryCard extends React.Component{
@@ -8,7 +8,9 @@ class CategoryCard extends React.Component{
         return (
             <div className="card mb-3">
                 <h5 className="p-2 text-capitalize">{this.props.category.category}</h5>
-                <CheatList cheats={ this.props.category.cheats }/>
+                { this.props.category.cheats.map( (cheat, key) => 
+                    <Cheat cheat={cheat} key={key} />
+                )}
             </div>
         )
     }

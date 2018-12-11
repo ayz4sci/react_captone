@@ -13,8 +13,7 @@ class Sidemenu extends React.Component{
                 outerContainerId={ "outer-container" } 
                 slide="true">
                 <LoginForm />
-                <a id="home" className="menu-item" href="/">Home</a>
-                <a id="about" className="menu-item" href="/about">Manage Cheats</a>
+                <hr className="mt-5 mb-5"/>
             </this.Menu>
         )
     }

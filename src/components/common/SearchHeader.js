@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Search from '@material-ui/icons/Search';
 
-class Header extends React.Component{
+class SearchHeader extends React.Component{
     render(){
         return (
             <div className="row mt-4 mb-4 mr-1 justify-content-md-center">
@@ -12,6 +12,7 @@ class Header extends React.Component{
                     id="search"
                     label="Git Cheat Sheet"
                     variant="outlined"
+                    onChange={this.props.onSearchChange}
                     InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
@@ -25,4 +26,4 @@ class Header extends React.Component{
     }
 }
 
-export default Header;
+export default SearchHeader;

@@ -19,7 +19,7 @@ class LoginForm extends React.Component{
                     // onChange={onChange}
                     // error={errors.category} 
                     />
-                <button>Submit</button>
+                <button className="button">Login or Register</button>
             </form>
         )
     }
