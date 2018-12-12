@@ -9,7 +9,7 @@ class MasonryContainer extends Component {
     return (
       <ResponsiveMasonry 
         columnsCountBreakPoints={{350: 1, 550: 2, 750: 3, 900: 3, 1024:4}}>
-        <Masonry columnsCount='4' gutter='10'>
+        <Masonry gutter='10'>
             { this.props.categories.map( (item, key) => 
               <CategoryCard category={item}  key={key}/>
             )}

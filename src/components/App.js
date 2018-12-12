@@ -25,7 +25,9 @@ class App extends Component {
   render() {
     return (
       <div id="outer-container">
-        <Sidemenu />
+        <Sidemenu 
+          userActions={this.props.actions.userActions} 
+          user={this.props.user}/>
         <div className="container" id="page-wrap">
           <SearchHeader onSearchChange={this.onSearchChange}/>
           { this.state.searchTerm && !this.props.categories.length ? 
@@ -42,6 +44,7 @@ class App extends Component {
 const mapStateToProps = (state, ownProps) => ({
   loading: state.ajaxCallsInProgress > 0,
   categories: state.categories,
+  user: state.user,
 });
 
 const mapDispatchToProps = (dispatch) =>({
