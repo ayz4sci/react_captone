@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as categoryActions from '../actions/categoryActions'
-import * as userActions from '../actions/userActions'
-import CategoryCard from './category/CategoryCard';
+import * as categoryActions from '../actions/categoryActions';
+import * as userActions from '../actions/userActions';
 import SearchHeader from './common/SearchHeader';
+import Mansonry from './home/MasonryContainer';
 import Sidemenu from './common/Sidemenu';
 import './App.css';
 
@@ -31,11 +31,7 @@ class App extends Component {
           { this.state.searchTerm && !this.props.categories.length ? 
             <p><b>{ this.state.searchTerm}</b> not found!</p>
             :
-            <div className="card-columns">
-              { this.props.categories.map( (item, key) => 
-                <CategoryCard category={item}  key={key}/>
-              )}
-            </div>
+            <Mansonry categories={this.props.categories} />
           }
         </div>
       </div>

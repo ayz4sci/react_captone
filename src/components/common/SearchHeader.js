@@ -6,7 +6,7 @@ import Search from '@material-ui/icons/Search';
 class SearchHeader extends React.Component{
     render(){
         return (
-            <div className="row mt-4 mb-4 mr-1 justify-content-md-center">
+            <div className="row m-4 justify-content-md-center">
                 <TextField
                     className="col-3 header"
                     id="search"
