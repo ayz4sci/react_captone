@@ -6,7 +6,7 @@ import * as userActions from '../actions/userActions';
 import SearchHeader from './common/SearchHeader';
 import Mansonry from './home/MasonryContainer';
 import Sidemenu from './common/Sidemenu';
-import {searchCategory} from '../helpers/Utils'
+import {searchCategory} from './utils/SearchUtil'
 import './App.css';
 
 class App extends Component {
@@ -17,7 +17,6 @@ class App extends Component {
   }
 
   componentWillReceiveProps = (nextProps) => {
-    console.log("called");
     if(nextProps.categories !== this.state.categories){
       this.setState({ categories: nextProps.categories });
     }
@@ -36,6 +35,7 @@ class App extends Component {
     return (
       <div id="outer-container">
         <Sidemenu 
+          loading={this.props.loading} 
           userActions={this.props.actions.userActions} 
           user={this.props.user} />
         <div className="container" id="page-wrap">

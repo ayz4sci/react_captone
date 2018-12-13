@@ -14,8 +14,7 @@ class UserProfilePage extends React.Component{
                     <input  
                         type="submit" 
                         className="btn btn-secondary mt-3" 
-                        value={this.props.signingOut ? 'Signing Out...' : "Sign Out"}
-                        disabled={this.props.signingOut}
+                        value="Sign Out"
                         onClick={this.props.onSignOut}/>
                 </form>
             </div>
@@ -25,7 +24,6 @@ class UserProfilePage extends React.Component{
 
 UserProfilePage.propTypes = {
     username: PropTypes.string.isRequired,
-    signingOut: PropTypes.bool.isRequired,
     onSignOut: PropTypes.func
 }
 

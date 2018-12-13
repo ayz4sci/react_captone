@@ -1,21 +1,31 @@
 import mongoose from 'mongoose';
+import Category from './models/Category';
 import Cheat from './models/Cheat';
 
-mongoose.connect('mongodb://localhost/grocery', () => {
-    console.log('connected.');
+const json = require('./data/git-cheat-sheet.json');
+
+mongoose.connect('mongodb://localhost/captone', () => {
 
     mongoose.connection.db.dropDatabase();
     
-    const items = [
-        { name: "Ice cream" },
-        { name: "Waffles" },
-        { name: "Candy", purchased: true },
-        { name: "Snarks" },
-    ];
+    // new Category({name: json[0].name}).save((err, doc) => {
+    //     console.log(err);
+    // });
 
-    items.forEach( item => {
-        new Cheat(item).save();
-    })
+    
+    json.forEach( item => {
+        new Category({ name: item.name }).save((err, category) => {
+            if(category){
+                item.cheats.forEach( cheat => {
+                    new Cheat(cheat).save( (err, doc) => {
+                        if(doc){
+                            category.update({ cheats: doc});
+                        }
+                    });
+                });
+            }
+        });
+    });
 });
 
 

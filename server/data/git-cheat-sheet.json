@@ -1,6 +1,6 @@
 [
     {
-      "category": "Install GIT",
+      "name": "Install GIT",
       "cheats": [
         {
           "description": "Install git on macOS with Homebrew",
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "category": "Configuration",
+      "name": "Configuration",
       "cheats": [
         {
           "command": "git config --global user.name [name]",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "category": "Create Repositories",
+      "name": "Create Repositories",
       "cheats": [
         {
           "command": "git init [project-name]",
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "category": "Make Changes",
+      "name": "Make Changes",
       "cheats": [
         {
           "command": "git status",
@@ -137,7 +137,7 @@
       ]
     },
     {
-      "category": "Branches",
+      "name": "Branches",
       "cheats": [
         {
           "command": "git branch",
@@ -177,7 +177,7 @@
       ]
     },
     {
-      "category": "Moving and removing files",
+      "name": "Moving and removing files",
       "cheats": [
         {
           "command": "git rm [file]",
@@ -197,7 +197,7 @@
       ]
     },
     {
-      "category": "Stashing",
+      "name": "Stashing",
       "cheats": [
         {
           "command": "git stash",
@@ -222,7 +222,7 @@
       ]
     },
     {
-      "category": "History and diff",
+      "name": "History and diff",
       "cheats": [
         {
           "command": "git log",
@@ -247,7 +247,7 @@
       ]
     },
     {
-      "category": "Cancel and redo stuffs",
+      "name": "Cancel and redo stuffs",
       "cheats": [
         {
           "command": "git reset [commit]",
@@ -276,7 +276,7 @@
       ]
     },
     {
-      "category": "Synchronization and remote repositories",
+      "name": "Synchronization and remote repositories",
       "cheats": [
         {
           "command": "git reset [commit]",
@@ -311,7 +311,7 @@
       ]
     },
     {
-      "category": "Tagging",
+      "name": "Tagging",
       "cheats": [
         {
           "command": "git tag",

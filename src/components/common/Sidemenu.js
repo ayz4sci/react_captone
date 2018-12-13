@@ -12,7 +12,18 @@ class Sidemenu extends React.Component{
         errors: {},
         username: "",
         password: "",
-        loading: false,
+        loading: this.props.loading,
+        user: this.props.user
+    }
+
+    componentWillReceiveProps = (nextProps) => {
+        if (nextProps.user !== this.state.user) {
+            this.setState({ 
+                loading: false,
+                user: nextProps.user
+            });
+
+        }
     }
 
     onChange = (e) => {
@@ -21,22 +32,14 @@ class Sidemenu extends React.Component{
 
     onEnter = (e) => {
         e.preventDefault();
+        if(!this.formIsValid()) return;
         this.setState({loading: true});
-        if(!this.formIsValid())  {
-            this.setState({loading: false});
-            return;
-        }
-
-        this.setState({loading: false});
+        this.props.userActions.loadUser(this.state.username, this.state.password);
     }
 
     onSignOut = (e) => {
         e.preventDefault();
-        if(!this.formIsValid()) {
-            this.setState({loading: false});
-            return;
-        }
-        this.setState({loading: false});
+        this.setState({user: null});
     }
 
     formIsValid = () => {
@@ -69,15 +72,16 @@ class Sidemenu extends React.Component{
                     :
                     <UserProfilePage 
                         username={this.state.username}
-                        onSignOut={this.onSignOut} 
-                        loading={this.state.loading}/>
+                        onSignOut={this.onSignOut} />
                 }
             </this.Menu>
         )
     }
 }
+
 Sidemenu.propTypes = {
     userActions: PropTypes.object,
     user: PropTypes.object
 }
+
 export default Sidemenu;

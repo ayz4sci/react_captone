@@ -1,5 +1,5 @@
 import * as types from './actionTypes';
-import * as helper from '../helpers/RestHelper';
+import * as helper from '../components/utils/RestHelper';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 export const loadUserSuccess = (users) => ({
@@ -11,12 +11,6 @@ export const createUserSuccess = (user) =>
 
 export const loadUser = (username, password) => ( 
     dispatch => {
-        // userApi.getAllUsers().then(users => {
-        //     dispatch(loadUserSuccess(users));
-        // }).catch(error => {
-        //     throw(error);
-        // });
-
         dispatch(beginAjaxCall());
         helper.post("api/user", {username, password})
         .then(user => {
