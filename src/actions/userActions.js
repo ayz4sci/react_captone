@@ -18,24 +18,12 @@ export const loadUser = (username, password) => (
         // });
 
         dispatch(beginAjaxCall());
-        helper.post("api/users", {username, password})
-        .then(categories => {
-            dispatch(loadUserSuccess(categories)) 
+        helper.post("api/user", {username, password})
+        .then(user => {
+            dispatch(loadUserSuccess(user)) 
         }).catch(e =>{
             dispatch(ajaxCallError(e));
             throw(e);
         });
     }
- );
-
- export const saveUser = (user) => (
-     dispatch => {
-        dispatch(beginAjaxCall());
-        // userApi.saveUser(user).then(user => {
-        //     dispatch(createUserSuccess(user));
-        // }).catch(error => {
-        //     dispatch(ajaxCallError(error));
-        //     throw(error);
-        // });
-     }
  );
