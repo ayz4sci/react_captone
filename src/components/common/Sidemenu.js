@@ -12,29 +12,31 @@ class Sidemenu extends React.Component{
         errors: {},
         username: "",
         password: "",
-        loggingIn: false,
-        registering: false,
-        signingOut: false
+        loading: false,
     }
 
     onChange = (e) => {
         this.setState({ [e.target.name] : e.target.value});
     }
 
-    onLogin = (e) => {
+    onEnter = (e) => {
         e.preventDefault();
-        if(!this.formIsValid()) return;
-    }
+        this.setState({loading: true});
+        if(!this.formIsValid())  {
+            this.setState({loading: false});
+            return;
+        }
 
-    onRegister = (e) => {
-        e.preventDefault();
-        if(!this.formIsValid()) return;
+        this.setState({loading: false});
     }
 
     onSignOut = (e) => {
         e.preventDefault();
-        if(!this.formIsValid()) return;
-        this.setState({loggedIn: false});
+        if(!this.formIsValid()) {
+            this.setState({loading: false});
+            return;
+        }
+        this.setState({loading: false});
     }
 
     formIsValid = () => {
@@ -63,13 +65,12 @@ class Sidemenu extends React.Component{
                     <LoginForm 
                         {...this.state}
                         onChange={this.onChange}
-                        onLogin={this.onLogin}
-                        onRegister={this.onRegister}/>
+                        onEnter={this.onEnter}/>
                     :
                     <UserProfilePage 
                         username={this.state.username}
                         onSignOut={this.onSignOut} 
-                        signingOut={this.state.signingOut}/>
+                        loading={this.state.loading}/>
                 }
             </this.Menu>
         )

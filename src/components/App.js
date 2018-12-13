@@ -27,9 +27,11 @@ class App extends Component {
       <div id="outer-container">
         <Sidemenu 
           userActions={this.props.actions.userActions} 
-          user={this.props.user}/>
+          user={this.props.user} />
         <div className="container" id="page-wrap">
-          <SearchHeader onSearchChange={this.onSearchChange}/>
+          <SearchHeader 
+            loading={this.props.loading} 
+            onSearchChange={this.onSearchChange} />
           { this.state.searchTerm && !this.props.categories.length ? 
             <p><b>{ this.state.searchTerm}</b> not found!</p>
             :

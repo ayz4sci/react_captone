@@ -1,6 +1,6 @@
 module.exports = (app) => {
-
     const Cheat = require('../models/Cheat');
+    const Category = require('../models/Category');
 
     app.route('/api/cheats')
     .get( (req, res) =>{

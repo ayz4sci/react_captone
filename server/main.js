@@ -2,9 +2,6 @@ import express from 'express';
 import parser from 'body-parser';
 import path from 'path';
 import fs from "fs";
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import App from '../src/App';
 
 require('./database');
 

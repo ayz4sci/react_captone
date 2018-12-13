@@ -11,28 +11,20 @@ class LoginForm extends React.Component{
                     label="Username"
                     onChange={this.props.onChange}
                     error={this.props.errors.username}
-                    type="text"
-                     />
+                    type="text" />
                 <TextInput
                     name="password"
                     label="Password"
                     onChange={this.props.onChange}
                     error={this.props.errors.password} 
-                    type="password"
-                    />
+                    type="password" />
                 <span className="row justify-content-md-center">
-                <input  
-                    disabled={this.props.loggingIn}
-                    type="submit" 
-                    className="btn btn-primary mr-1" 
-                    value={this.props.loggingIn ? 'Logging In...' : "Log in"}
-                    onClick={this.props.onLogin}/>
-                <input  
-                    disabled={this.props.registering}
-                    type="submit" 
-                    className="btn btn-secondary ml-1" 
-                    value={this.props.registering ? 'Registering...' : "Register"}
-                    onClick={this.props.onRegister}/>
+                    <input  
+                        disabled={this.props.loggingIn}
+                        type="submit"
+                        className="btn btn-primary mr-1" 
+                        value={this.props.loading ? 'Entering...' : "Enter"}
+                        onClick={this.props.onEnter}/>
                 </span>
             </form>
         )

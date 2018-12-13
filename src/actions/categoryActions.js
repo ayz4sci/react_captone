@@ -1,4 +1,6 @@
 import * as types from './actionTypes';
+import * as helper from '../helpers/RestHelper';
+import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 const json = require('../components/utils/git-cheat-sheet.json');
 
@@ -7,14 +9,17 @@ export const loadCategoriesSuccess = (categories) =>
 
 export const loadCategories = (searchTerm) => (
     dispatch => {
+        dispatch(beginAjaxCall());
         let searchResult = searchCategory(json, searchTerm);
         dispatch(loadCategoriesSuccess(searchResult)) 
-        //  json;
-        // return categoryApi.getAllCategorys(searchTerm).then(categories => { 
-        //     dispatch(loadCategoriesSuccess(categories)) 
-        // }).catch(error => {
-        //     throw(error);
-        // });
+
+        let promise = searchTerm ? helper.post("/api/categories", searchTerm) : helper.get("/api/categories");
+        promise.then(categories => {
+            dispatch(loadCategoriesSuccess(categories)) 
+        }).catch(e =>{
+            dispatch(ajaxCallError(e));
+            throw(e);
+        });
     }
 );
 

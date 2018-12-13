@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 import categories from './categoryReducer';
-import users from './userReducer';
+import user from './userReducer';
 import ajaxCallsInProgress from './ajaxStatusReducer';
 
 const rootReducer = combineReducers({
     categories,
-    users,
+    user,
     ajaxCallsInProgress,
 });
 
