@@ -11,7 +11,6 @@ const port = 7777;
 app.get('/', (req, res) => {
     // point to the html file created by CRA's build tool
     const filePath = path.resolve(__dirname, '../build/index.html');
-    // const filePath = path.resolve(__dirname, '..', '..', 'build', 'index.html');
 
     fs.readFile(filePath, 'utf8', (err, htmlData) => {
         if (err) {
@@ -30,4 +29,5 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 app.use(parser.json());
 app.use(parser.urlencoded({extended:false}));
 
-require('./routes/items')(app);
+require('./routes/users')(app);
+require('./routes/categories')(app);

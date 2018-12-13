@@ -9,12 +9,11 @@ export const loadCategoriesSuccess = (categories) =>
 
 export const loadCategories = (searchTerm) => (
     dispatch => {
-        dispatch(beginAjaxCall());
-        let searchResult = searchCategory(json, searchTerm);
-        dispatch(loadCategoriesSuccess(searchResult)) 
+        // dispatch(beginAjaxCall());
+        // dispatch(loadCategoriesSuccess(json));
 
-        let promise = searchTerm ? helper.post("/api/categories", searchTerm) : helper.get("/api/categories");
-        promise.then(categories => {
+        helper.get("/api/categories")
+        .then(categories => {
             dispatch(loadCategoriesSuccess(categories)) 
         }).catch(e =>{
             dispatch(ajaxCallError(e));
@@ -22,25 +21,3 @@ export const loadCategories = (searchTerm) => (
         });
     }
 );
-
-const searchCategory = (arr, searchTerm) => {
-    if(searchTerm){
-        let result = [];
-        searchTerm = searchTerm.toLowerCase();
-
-        result = arr.filter( item => 
-            item.category.toLowerCase().includes(searchTerm)
-            | item.cheats.some( cheat => 
-                cheat.description.toLowerCase().includes(searchTerm)
-                | cheat.command.toLowerCase().includes(searchTerm))
-        ).map(item =>
-            Object.assign({}, item, {'cheats': item.cheats.filter( cheat => 
-                cheat.description.toLowerCase().includes(searchTerm)
-                | cheat.command.toLowerCase().includes(searchTerm))
-            })
-        );
-
-        return result;
-    }
-    return arr;
-}

@@ -6,20 +6,30 @@ import * as userActions from '../actions/userActions';
 import SearchHeader from './common/SearchHeader';
 import Mansonry from './home/MasonryContainer';
 import Sidemenu from './common/Sidemenu';
+import {searchCategory} from '../helpers/Utils'
 import './App.css';
 
 class App extends Component {
   state = {
     sideBarOpen: false, 
-    searchTerm: ""
+    searchTerm: "",
+    categories: this.props.categories
   }
 
-  json = require('../components/utils/git-cheat-sheet.json');
+  componentWillReceiveProps = (nextProps) => {
+    console.log("called");
+    if(nextProps.categories !== this.state.categories){
+      this.setState({ categories: nextProps.categories });
+    }
+  }
 
   onSearchChange = (e) => {
     e.preventDefault();
     this.setState({searchTerm: e.target.value});
     this.props.actions.categoryActions.loadCategories(e.target.value);
+
+    let result = searchCategory(this.props.categories, e.target.value);
+    this.setState({ categories: result});
   }
 
   render() {
@@ -32,10 +42,10 @@ class App extends Component {
           <SearchHeader 
             loading={this.props.loading} 
             onSearchChange={this.onSearchChange} />
-          { this.state.searchTerm && !this.props.categories.length ? 
+          { this.state.searchTerm && !this.state.categories.length ? 
             <p><b>{ this.state.searchTerm}</b> not found!</p>
             :
-            <Mansonry categories={this.props.categories} />
+            <Mansonry categories={this.state.categories} />
           }
         </div>
       </div>
@@ -54,6 +64,6 @@ const mapDispatchToProps = (dispatch) =>({
     categoryActions: bindActionCreators( categoryActions, dispatch ),
     userActions: bindActionCreators( userActions, dispatch )
   }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
