@@ -3,8 +3,7 @@ module.exports = (app) => {
 
     app.route('/api/categories')
     .get( (req, res) =>{
-        console.log(req);
-        Category.find().populate('cheat').then( ( categories, err) => {
+        Category.find().populate('cheats').then( (categories, err) => {
             res.send(categories);
         })
     });
