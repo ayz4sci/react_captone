@@ -7,7 +7,7 @@ class CategoryCard extends React.Component{
     render(){
         return (
             <div className="card m-1">
-                <h5 className="p-2 text-capitalize">{this.props.category.category}</h5>
+                <h5 className="p-2 text-capitalize">{this.props.category.name}</h5>
                 { this.props.category.cheats.map( (cheat, key) => 
                     <Cheat cheat={cheat} key={key} />
                 )}

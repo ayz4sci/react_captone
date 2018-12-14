@@ -32,8 +32,9 @@
     "redux-thunk": "^2.3.0",
     "toastr": "2.1.4"
   },
+  "proxy": "http://localhost:7777",
   "scripts": {
-    "server": "nodemon server/bootstrap.js",
+    "serve": "nodemon server/bootstrap.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

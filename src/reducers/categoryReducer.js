@@ -16,8 +16,8 @@ export default function categoryReducer (state = initialState.categories, action
 
 export const sort = (categories) => {
     categories.sort((a, b) =>{
-        const x = a.category.toLowerCase();
-        const y = b.category.toLowerCase();
+        const x = a.name.toLowerCase();
+        const y = b.name.toLowerCase();
         if (x < y) {return -1;}
         if (x > y) {return 1;}
         return 0;

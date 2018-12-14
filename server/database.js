@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/captone', () => {
                 item.cheats.forEach( cheat => {
                     new Cheat(cheat).save( (err, doc) => {
                         if(doc){
-                            category.update({$push : { cheats: doc}});
+                            category.updateOne({ $push : { cheats: doc} } ).exec();
                         }
                     });
                 });

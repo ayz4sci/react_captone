@@ -23,7 +23,7 @@ class SearchHeader extends React.Component{
                             </InputAdornment>
                             ),
                         }} />
-                    {  this.props.loading && <LoadingDots className="m-1" interval={400} dots={3} /> }
+                    {  this.props.loading && <LoadingDots className="m-1" interval={400} dots={4} /> }
                 </span>
             </div>
         )
