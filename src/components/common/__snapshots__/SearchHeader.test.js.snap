@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="row justify-content-md-center"
+>
+  <span
+    className="col-4 m-4 header"
+  >
+    <TextField
+      InputProps={
+        Object {
+          "endAdornment": <WithStyles(InputAdornment)
+            position="end"
+          >
+            <pure(SearchIcon) />
+          </WithStyles(InputAdornment)>,
+        }
+      }
+      id="search"
+      label="Git Cheat Sheet"
+      onChange={[MockFunction]}
+      required={false}
+      select={false}
+      variant="outlined"
+    />
+  </span>
+</div>
+`;

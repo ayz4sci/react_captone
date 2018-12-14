@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="Lol"
+  >
+    lol
+  </label>
+  <div
+    className="field"
+  >
+    <input
+      className="form-control"
+      name="Lol"
+      onChange={[MockFunction]}
+      type="text"
+    />
+  </div>
+</div>
+`;

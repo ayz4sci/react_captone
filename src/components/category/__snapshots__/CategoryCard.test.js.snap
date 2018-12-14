@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="card m-1"
+>
+  <h5
+    className="p-2 text-capitalize"
+  >
+    lol
+  </h5>
+</div>
+`;

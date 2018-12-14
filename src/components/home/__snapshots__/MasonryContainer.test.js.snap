@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<MasonryResponsive
+  className={null}
+  columnsCountBreakPoints={
+    Object {
+      "1024": 4,
+      "350": 1,
+      "550": 2,
+      "750": 3,
+      "900": 3,
+    }
+  }
+  style={null}
+>
+  <Masonry
+    className={null}
+    columnsCount={3}
+    gutter="10"
+    style={Object {}}
+  >
+    <CategoryCard
+      category={
+        Object {
+          "cheats": Array [
+            Object {
+              "command": "lola la",
+              "description": "lola",
+            },
+          ],
+          "name": "lol",
+        }
+      }
+      key="0"
+    />
+  </Masonry>
+</MasonryResponsive>
+`;

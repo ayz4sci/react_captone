@@ -6,12 +6,6 @@ export default function userReducer (state = initialState.user, action){
         case types.LOAD_USER_SUCCESS:
             return Object.assign({}, action.user);
 
-        case types.CREATE_USER_SUCCESS:
-            return [
-                ...state,
-                Object.assign({}, action.user)
-            ];
-
         default:
             return state;
     }

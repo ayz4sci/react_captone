@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Tooltip
+  animateFill={true}
+  animation="shift"
+  arrow={false}
+  arrowSize="regular"
+  className=""
+  delay={0}
+  disabled={false}
+  distance="0"
+  duration={375}
+  followCursor={false}
+  hideDelay="1000"
+  hideDuration={375}
+  hideOnClick={true}
+  html={null}
+  inertia="true"
+  interactive={false}
+  interactiveBorder={2}
+  multiple={false}
+  offset={0}
+  onHidden={[Function]}
+  onHide={[Function]}
+  onRequestClose={[Function]}
+  onShow={[Function]}
+  onShown={[Function]}
+  popperOptions={Object {}}
+  position="top"
+  size="small"
+  sticky={false}
+  stickyDuration={200}
+  style={Object {}}
+  theme="dark"
+  title="Copied!"
+  touchHold={false}
+  trigger="click"
+  unmountHTMLWhenHide={false}
+>
+  <code
+    onMouseMove={[Function]}
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+      lol
+    </a>
+  </code>
+</Tooltip>
+`;

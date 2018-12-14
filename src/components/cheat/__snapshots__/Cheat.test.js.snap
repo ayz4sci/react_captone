@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="cheat m-2"
+>
+  <div>
+    Lol
+  </div>
+  <ClipboardEnabledText
+    content="git command"
+  />
+</div>
+`;

@@ -8,7 +8,7 @@ export const loadCategoriesSuccess = (categories) =>
 export const loadCategories = (searchTerm) => (
     dispatch => {
         dispatch(beginAjaxCall());
-        helper.get("/api/categories")
+        return helper.get("/api/categories")
         .then(categories => {
             dispatch(loadCategoriesSuccess(categories)) 
         }).catch(e =>{

@@ -39,7 +39,6 @@ class ClipboardEnabledText extends React.Component{
                     <a href="#" onClick={this.copyText}>{this.props.content}</a>
                 </code>
             </Tooltip>
-
         )
     }
 }

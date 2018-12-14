@@ -1,8 +1,8 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
 export const get = (url) => {
     return new Promise( (success, error) => {
-        $.ajax({
+        global.$.ajax({
             url: url,
             dataType: "json",
             success: success,
@@ -13,7 +13,7 @@ export const get = (url) => {
 
 export const post = (url, data) => {
     return new Promise( (success, error) => {
-        $.ajax({
+        global.$.ajax({
             url: url,
             type: "POST",
             data: data,
@@ -25,7 +25,7 @@ export const post = (url, data) => {
 
 export const patch = (url, data) => {
     return new Promise( (success, error) => {
-        $.ajax({
+        global.$.ajax({
             url: url,
             type: "PATCH",
             data: data,
@@ -37,7 +37,7 @@ export const patch = (url, data) => {
 
 export const del = (url) => {
     return new Promise( (success, error) => {
-        $.ajax({
+        global.$.ajax({
             url: url,
             type: "DELETE",
             success: success,

@@ -7,7 +7,7 @@ describe( 'Ajax Status Reducer', () => {
         expect(ajaxCallsInProgressState).toEqual(1);
     });
     it('should decrease the ajaxCallsInProgress count when passed any action ending in _SUCCESS', () => {
-        const ajaxCallsInProgressState = ajaxStatusReducer(1, { type: types.UPDATE_AUTHORS_SUCCESS});
+        const ajaxCallsInProgressState = ajaxStatusReducer(1, { type: types.LOAD_USER_SUCCESS});
         expect(ajaxCallsInProgressState).toEqual(0);
     });
 });
