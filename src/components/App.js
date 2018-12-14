@@ -25,7 +25,6 @@ class App extends Component {
   onSearchChange = (e) => {
     e.preventDefault();
     this.setState({searchTerm: e.target.value});
-    this.props.actions.categoryActions.loadCategories(e.target.value);
 
     let result = searchCategory(this.props.categories, e.target.value);
     this.setState({ categories: result});
@@ -42,7 +41,7 @@ class App extends Component {
           <SearchHeader 
             loading={this.props.loading} 
             onSearchChange={this.onSearchChange} />
-          { this.state.searchTerm && !this.state.categories.length ? 
+          { this.state.searchTerm && !this.state.categories.length  && !this.props.loading ? 
             <p><b>{ this.state.searchTerm}</b> not found!</p>
             :
             <Mansonry categories={this.state.categories} />

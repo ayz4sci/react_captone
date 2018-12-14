@@ -38,6 +38,7 @@ LoginForm.propTypes = {
     onChange: PropTypes.func.isRequired,
     onRegister: PropTypes.func,
     onLogin: PropTypes.func,
+    loading: PropTypes.bool.isRequired,
 }
 
 export default LoginForm;

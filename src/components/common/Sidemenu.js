@@ -18,11 +18,10 @@ class Sidemenu extends React.Component{
 
     componentWillReceiveProps = (nextProps) => {
         if (nextProps.user !== this.state.user) {
-            this.setState({ 
-                loading: false,
-                user: nextProps.user
-            });
-
+            this.setState({ user: nextProps.user });
+        }
+        if (nextProps.loading !== this.state.loading) {
+            this.setState({ loading: nextProps.loading });
         }
     }
 

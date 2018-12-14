@@ -2,8 +2,8 @@ import * as types from './actionTypes';
 import * as helper from '../components/utils/RestHelper';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
-export const loadUserSuccess = (users) => ({
-    type: types.LOAD_USER_SUCCESS, users
+export const loadUserSuccess = (user) => ({
+    type: types.LOAD_USER_SUCCESS, user
 });
 
 export const createUserSuccess = (user) => 
